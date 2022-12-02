@@ -19,7 +19,7 @@ node {
         stage('push repo to remote host') {
             
                 echo 'connect to remote host and pull down the latest version'
-                sshagent(['docker_ubuntu']) {
+                sshagent(['thistime']) {
                 sh 'scp -3 git@github.com:ilianvo/first-demo.git ubuntu@54.93.172.221:/home/ubuntu'
             }
         }
