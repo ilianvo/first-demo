@@ -5,7 +5,7 @@ node {
      sudo apt update
      hostname -I
      ip a
-     git clone https://github.com/ilianvo/first-demo.git
+     git clone git@github.com:ilianvo/first-demo.git
      << EOF
      """
       
