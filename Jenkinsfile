@@ -28,3 +28,4 @@ node {
                 echo 'Check website is up'
                 sh 'curl -Is 54.93.172.221 | head -n 1'
             }
+}
