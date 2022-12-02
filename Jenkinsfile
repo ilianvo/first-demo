@@ -20,7 +20,7 @@ node {
             
                 echo 'connect to remote host and pull down the latest version'
                 sshagent(['thistime']) {
-                sh 'ssh -i  https://github.com/ilianvo/first-demo.git ubuntu@54.93.172.221 sudo git -C /var/www/html pull'
+                sh 'scp -o https://github.com/ilianvo/first-demo.git ubuntu@54.93.172.221 sudo git -C /var/www/html pull'
             }
         }
         stage('Check website is up') {
