@@ -19,7 +19,7 @@ node {
             
          echo 'connect to remote host and pull down the latest version'
             sh """
-            sudo rm -r ~/tem
+           
            git clone https://github.com/ilianvo/first-demo.git tem
            mkdir first-demo
             mv tem/.git firts-demo/.git
