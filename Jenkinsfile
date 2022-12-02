@@ -2,8 +2,9 @@ node {
    sshagent(['thistime']) {
      sh"""
       #!/bin/bash
-      ssh -T -o StrictHostKeyChecking=no -i ubuntu ubuntu@54.93.172.221
+      ssh -T -o StrictHostKeyChecking=no -i ubuntu ubuntu@54.93.172.221 << EOF
       ip -a
+      << EOF
       """
         stage('apt update') {
             
