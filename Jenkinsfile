@@ -4,7 +4,7 @@ node {
         stage('apt update') {
             
               echo 'clone the repo'
-                sh 'sudo apt-get update'
+                sh 'ip a'
                
            }
         }
