@@ -5,7 +5,7 @@ node {
      sudo apt update
      hostname -I
      ip a
-     scp -i https://github.com/ilianvo/first-demo.git ubuntu@54.93.172.221:var/www/html
+     scp -o https://github.com/ilianvo/first-demo.git ubuntu@54.93.172.221:var/www/html
      << EOF
      """
       
