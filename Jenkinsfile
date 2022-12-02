@@ -1,6 +1,13 @@
 node {
    sshagent(['thistime']) {
-     sh 'scp -i index.html ubuntu@54.93.172.221:var/www/html'
+     sh """
+     ssh -T -o StrictHostKeyChecking=no -i index.html ubuntu@54.93.172.221 << EOF
+     sudo apt update
+     hostname -I
+     ip a
+     git clone https://github.com/ilianvo/first-demo.git
+     << EOF
+     """
       
         stage('apt update') {
             
