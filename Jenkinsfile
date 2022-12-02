@@ -19,6 +19,7 @@ node {
         stage('push repo to remote host') {
             
                 echo 'connect to remote host and pull down the latest version'
+                sshagent(['thistime']) {
                 sh 'ssh -i  thistime ubuntu@54.93.172.221 sudo git -C /var/www/html pull'
             }
         }
