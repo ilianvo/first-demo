@@ -1,11 +1,10 @@
 node {
-   sshagent(['thistime']) {
+  ## sshagent(['thistime']) {
      sh """
      ssh -T -o StrictHostKeyChecking=no -i index.html ubuntu@54.93.172.221 << EOF
      sudo apt update
      hostname -I
      ip a
-     git clone git@github.com:ilianvo/first-demo.git
      << EOF
      """
       
@@ -19,8 +18,9 @@ node {
         stage('push repo to remote host') {
             
                 echo 'connect to remote host and pull down the latest version'
+           sh 'git clone git clone git@github.com:ilianvo/first-demo.git'
                 sshagent(['thistime']) {
-                sh 'scp https://github.com/ilianvo/first-demo.git ubuntu@54.93.172.221:/home/ubuntu'
+                sh 'scp /home/ubuntu/first-demo ubuntu@54.93.172.221:/home/ubuntu'
             }
         }
         stage('Check website is up') {
