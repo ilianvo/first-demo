@@ -21,7 +21,7 @@ node {
             sh 'git clone https://github.com/ilianvo/first-demo.git /home/ubuntu/first-demo'
          
                 sshagent(['thistime']) {
-                sh 'scp /home/ubuntu/first-demo ubuntu@54.93.172.221:/home/ubuntu'
+                sh 'scp -r /home/ubuntu/first-demo ubuntu@54.93.172.221:/home/ubuntu/'
             }
         }
         stage('Check website is up') {
