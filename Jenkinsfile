@@ -20,6 +20,7 @@ node {
          echo 'connect to remote host and pull down the latest version'
             sh """
            git clone https://github.com/ilianvo/first-demo.git temp
+           mkdir first-demo
             mv temp/.git firts-demo/.git
             rm -rf temp
             """
