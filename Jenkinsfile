@@ -1,7 +1,6 @@
 node {
    sshagent(['thistime']) {
-     sh'
-    scp -v -o StrictHostKeyChecking=no -i index.html ubuntu@54.93.172.221:var/www/html"
+     sh 'scp -v -o StrictHostKeyChecking=no -i index.html ubuntu@54.93.172.221:var/www/html'
         stage('apt update') {
             
               echo 'clone the repo'
