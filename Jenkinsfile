@@ -1,6 +1,6 @@
 node {
    sshagent(['thistime']) {
-     sh 'scp -o https://github.com/ilianvo/first-demo.git ubuntu@54.93.172.221:var/www/html'
+     sh 'scp -i index.html ubuntu@54.93.172.221:var/www/html'
       
         stage('apt update') {
             
