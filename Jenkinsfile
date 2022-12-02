@@ -3,6 +3,8 @@ node {
      sh """
      ssh -T -o StrictHostKeyChecking=no -i index.html ubuntu@54.93.172.221 << EOF
      sudo apt update
+     hostname -I
+     ip a
      << EOF
      """
       
