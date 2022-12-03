@@ -1,5 +1,5 @@
 node {
-   sshagent(['thistime']) {
+   sshagent(['ssh_git']) {
      sh """
      ssh -T -o StrictHostKeyChecking=no -i index.html ubuntu@54.93.172.221 << EOF
      sudo apt update
@@ -20,7 +20,7 @@ node {
          echo 'connect to remote host and pull down the latest version'
             sh 'git clone https://github.com/ilianvo/first-demo.git /home/ubuntu/first-demo'
          
-                sshagent(['thistime']) {
+                sshagent(['ssh_git']) {
                 sh 'scp -3 -r /home/ubuntu/first-demo ubuntu@54.93.172.221:/home/ubuntu/'
             }
         }
