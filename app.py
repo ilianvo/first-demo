@@ -3,7 +3,7 @@ import random
 app = Flask(__name__)
 # list of cat images
 images = [
-  "https://www.pngkey.com/png/full/193-1934583_jenkins-x.png",
+  "https://media1.giphy.com/media/xTiIzJSKB4l7xTouE8/giphy.gif?cid=790b7611cbf3bcb6c65ed24894cdafa210449ba4c47c09a6&rid=giphy.gif&ct=g",
 ]
 @app.route('/')
 def index():
