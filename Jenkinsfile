@@ -8,10 +8,9 @@ pipeline {
                  }
            }
             stage('Docker Build'){
-            steps{
-                script{
-            sh 'sudo docker system prune -a -f'
-            sh 'sudo docker build -t demo .'
+              steps{
+                script{           
+                   sh 'sudo docker build -t demo .'
         }
     }
 }
@@ -19,10 +18,11 @@ pipeline {
             steps{
                 script{
                     withCredentials([string(credentialsId: 'Token', variable: 'mytoken')]) {
-                    sh 'sudo docker login -u ilianvo -p ${mytoken}'
+                     sh 'sudo docker login -u ilianvo -p ${mytoken}'
 }
-                    sh 'sudo docker tag demo ilianvo/demo'
-                    sh 'sudo docker push ilianvo/demo'
+                     sh 'sudo docker tag demo ilianvo/demo'
+                     sh 'sudo docker push ilianvo/demo'
+                     sh 'sudo docker system prune -a -f'
                     }
                 }
             }
@@ -30,14 +30,14 @@ pipeline {
             steps{
                 script{
                     sshagent(['ec2_machine']) {
-                    sh """
-                    ssh ubuntu@54.93.172.221 << EOF
-                    sudo docker stop demo
-                    sudo docker system prune -a -f
-                    sudo docker pull ilianvo/demo
-                    sudo docker run -t -d -p 8888:5000 --name demo ilianvo/demo
-                    << EOF
-                    """
+                     sh """
+                     ssh ubuntu@54.93.172.221 << EOF
+                     sudo docker stop demo
+                     sudo docker system prune -a -f
+                     sudo docker pull ilianvo/demo
+                     sudo docker run -t -d -p 8888:5000 --name demo ilianvo/demo
+                     << EOF
+                     """
 }
                 }
             }
