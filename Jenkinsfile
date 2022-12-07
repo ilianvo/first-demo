@@ -10,7 +10,6 @@ pipeline {
             stage('Docker Build'){
             steps{
                 script{
-            sh 'sudo docker stop demo'
             sh 'sudo docker system prune -a -f'
             sh 'sudo docker build -t demo .'
         }
