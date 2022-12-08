@@ -3,7 +3,7 @@ import random
 app = Flask(__name__)
 # image of jenkins
 images = [
-  "https://www.jenkins.io/images/logos/jenkins-x/jenkins-x.png",
+  "https://www.jenkins.io/images/logos/fire/fire.png",
 ]
 @app.route('/')
 def index():
