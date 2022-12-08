@@ -31,7 +31,7 @@ pipeline {
                 script{
                     sshagent(['ec2_machine']) {
                      sh """
-                     ssh ubuntu@54.93.172.221 << EOF
+                     ssh ubuntu@3.75.213.28 << EOF
                      sudo docker stop demo
                      sudo docker system prune -a -f
                      sudo docker pull ilianvo/demo
